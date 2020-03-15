@@ -1,0 +1,30 @@
+search_dir=../
+pattern="*_test.py"
+
+#get all tst files
+test_files=$(find $search_dir -type f -name $pattern )
+
+i=0
+for entry in $test_files
+do
+  echo $entry
+  # Check if first file
+  if [[ $i == 0 ]];
+  then
+    # just initialize
+    coverage run $entry
+
+  else
+    # append result
+    coverage run -a $entry
+  fi
+
+  i=$(($i + 1))
+done
+
+# Show coverage report
+coverage report -m
+
+# Get coverage report to xml
+coverage xml
+
