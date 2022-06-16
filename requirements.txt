@@ -28,7 +28,7 @@ nbformat==4.4.0
 nose2==0.9.1
 nose2-cov==1.0a4
 nose2-spark==0.3
-notebook==6.0.2
+notebook==6.4.12
 pandocfilters==1.4.2
 parso==0.5.1
 pbr==5.4.4
